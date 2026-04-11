@@ -68,12 +68,16 @@ export const IngredientsSection: React.FC = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="rounded-2xl overflow-hidden border-2 border-white/10 shadow-2xl"
+            className="rounded-2xl overflow-hidden border-2 border-white/10 shadow-2xl bg-gradient-to-t from-white/5 to-transparent relative"
           >
-            <img src="/mama_oso_bundle.png" alt="Pack Crema Mama Oso" className="w-full h-[250px] md:h-[300px] object-cover" />
-            <div className="bg-white/10 backdrop-blur p-4 text-center">
-              <p className="text-white font-bold text-sm">🔥 Paquetes Disponibles</p>
-              <p className="text-white/50 text-xs">1, 2 o 3 cremas con envío gratis</p>
+            <div className="w-full h-[250px] md:h-[300px] flex items-center justify-center relative pt-8">
+               <img src="/mama_oso_original_white.png" alt="Mama Oso Atrás Izquierda" className="absolute w-[45%] left-4 top-12 object-contain drop-shadow-lg z-0" />
+               <img src="/mama_oso_original_white.png" alt="Mama Oso Atrás Derecha" className="absolute w-[45%] right-4 top-12 object-contain drop-shadow-lg z-0" />
+               <img src="/mama_oso_original_white.png" alt="Mama Oso Centro" className="absolute w-[55%] left-1/2 -translate-x-1/2 top-4 object-contain drop-shadow-2xl z-10" />
+            </div>
+            <div className="bg-white/10 backdrop-blur p-4 text-center absolute bottom-0 left-0 w-full z-20">
+              <p className="text-white font-bold text-sm">🔥 Ofertas Especiales</p>
+              <p className="text-white/50 text-xs">Packs de 1, 2 o 3 frascos con envío gratis</p>
             </div>
           </motion.div>
         </div>

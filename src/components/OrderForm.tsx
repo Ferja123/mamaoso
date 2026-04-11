@@ -22,9 +22,9 @@ export const OrderForm: React.FC<OrderFormProps> = ({ stock }) => {
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
 
   const packs = [
-    { label: 'Pruébalo', title: '1 Crema', price: '109.00', img: '/mama_oso_original_white.png', saved: '' },
-    { label: 'Más Popular', title: '2 Cremas', price: '189.00', img: '/mama_oso_original_white.png', saved: '¡Ahorra S/29!' },
-    { label: 'Mejor Valor', title: '3 Cremas', price: '249.00', img: '/mama_oso_original_white.png', saved: '¡Ahorra S/78!' }
+    { label: 'Pruébalo', title: '1 Crema', price: '109.00', quantity: 1, saved: '' },
+    { label: 'Más Popular', title: '2 Cremas', price: '189.00', quantity: 2, saved: '¡Ahorra S/29!' },
+    { label: 'Mejor Valor', title: '3 Cremas', price: '249.00', quantity: 3, saved: '¡Ahorra S/78!' }
   ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -75,6 +75,34 @@ export const OrderForm: React.FC<OrderFormProps> = ({ stock }) => {
     setIsConfirmModalOpen(false);
   };
 
+  // Helper function to render CSS-based jar bundles
+  const renderJars = (quantity: number) => {
+    if (quantity === 1) {
+      return (
+        <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-2 md:mb-4 relative flex items-center justify-center">
+          <img src="/mama_oso_original_white.png" alt="1 Frasco" className="w-[85%] h-auto object-contain drop-shadow-md" />
+        </div>
+      );
+    }
+    if (quantity === 2) {
+      return (
+        <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-2 md:mb-4 relative">
+          <img src="/mama_oso_original_white.png" alt="Frasco Izquierdo" className="absolute w-[60%] left-0 top-2 object-contain drop-shadow-md z-0" />
+          <img src="/mama_oso_original_white.png" alt="Frasco Derecho" className="absolute w-[70%] right-0 top-0 object-contain drop-shadow-xl z-10" />
+        </div>
+      );
+    }
+    if (quantity === 3) {
+      return (
+        <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-2 md:mb-4 relative">
+          <img src="/mama_oso_original_white.png" alt="Frasco Atrás Izquierda" className="absolute w-[50%] left-0 top-3 object-contain drop-shadow-md z-0" />
+          <img src="/mama_oso_original_white.png" alt="Frasco Atrás Derecha" className="absolute w-[50%] right-0 top-3 object-contain drop-shadow-md z-0" />
+          <img src="/mama_oso_original_white.png" alt="Frasco Centro" className="absolute w-[65%] left-1/2 -translate-x-1/2 top-0 object-contain drop-shadow-2xl z-10" />
+        </div>
+      );
+    }
+  };
+
   return (
     <section id="ordenar" className="py-10 md:py-20 px-4 bg-slate-50 relative">
       <div className="max-w-4xl mx-auto space-y-8">
@@ -96,7 +124,7 @@ export const OrderForm: React.FC<OrderFormProps> = ({ stock }) => {
             <div className="h-2 w-full bg-red-100 rounded-full overflow-hidden">
               <motion.div
                 initial={{ width: 0 }}
-                whileInView={{ width: `${(stock/14)*100}%` }}
+                whileInView={{ width: `${(Math.min(stock, 14)/14)*100}%` }}
                 className="h-full bg-gradient-to-r from-red-400 to-red-500 rounded-full"
               />
             </div>
@@ -118,9 +146,7 @@ export const OrderForm: React.FC<OrderFormProps> = ({ stock }) => {
                     {pack.label}
                   </div>
 
-                  <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-2 md:mb-4">
-                    <img src={pack.img} alt={pack.title} className="w-full h-full object-contain" />
-                  </div>
+                  {renderJars(pack.quantity)}
 
                   <h4 className="text-brand-dark font-bold text-xs md:text-sm">{pack.title}</h4>
                   <div className="text-xl md:text-2xl font-black text-brand-dark">S/ {pack.price}</div>
@@ -208,19 +234,8 @@ export const OrderForm: React.FC<OrderFormProps> = ({ stock }) => {
               className="w-full bg-green-500 hover:bg-green-600 text-white font-black py-5 rounded-2xl shadow-xl shadow-green-500/20 text-lg uppercase tracking-wide flex items-center justify-center gap-3 transition-all relative overflow-hidden"
             >
               <MessageCircle className="w-7 h-7" />
-              CONFIRMAR PEDIDO VÍA WHATSAPP
+              CONFIRMAR PEDIDO
             </motion.button>
-
-            <div className="flex flex-wrap justify-center gap-6 pt-2">
-              <div className="flex items-center gap-2 text-slate-400">
-                <ShieldCheck className="w-4 h-4" />
-                <span className="text-[10px] font-bold uppercase tracking-widest">Pago Seguro</span>
-              </div>
-              <div className="flex items-center gap-2 text-slate-400">
-                <Truck className="w-4 h-4" />
-                <span className="text-[10px] font-bold uppercase tracking-widest">Entrega 24-48h</span>
-              </div>
-            </div>
           </form>
         </div>
       </div>
@@ -242,7 +257,9 @@ export const OrderForm: React.FC<OrderFormProps> = ({ stock }) => {
             >
               <div className="absolute top-0 inset-x-0 h-2 bg-brand-primary"></div>
               <div className="text-center mb-4">
-                <img src="/mama_oso_original_white.png" alt="Mama Oso" className="w-20 h-20 mx-auto object-contain mb-3" />
+                <div className="mx-auto w-24 h-24 mb-2 flex items-center justify-center">
+                  {renderJars(parseInt(paquete.match(/\d+/)?.[0] || '2'))}
+                </div>
                 <h3 className="text-2xl font-heading font-black text-brand-dark">🎉 ¡Excelente!</h3>
               </div>
               <p className="text-slate-500 text-sm mb-6 text-center leading-relaxed">Presiona el botón para que nuestro asesor confirme tu envío gratuito.</p>
@@ -257,7 +274,7 @@ export const OrderForm: React.FC<OrderFormProps> = ({ stock }) => {
                 onClick={confirmOrder}
                 className="w-full bg-green-500 hover:bg-green-600 text-white font-black py-4 rounded-2xl shadow-lg shadow-green-500/30 flex items-center justify-center gap-2 transition-colors"
               >
-                <MessageCircle className="w-5 h-5"/> COORDINAR POR WHATSAPP
+                <MessageCircle className="w-5 h-5"/> FINALIZAR EN WHATSAPP
               </button>
 
               <button onClick={() => setIsConfirmModalOpen(false)} className="w-full text-slate-400 font-bold text-xs uppercase tracking-widest py-3 mt-2">Corregir Datos</button>
