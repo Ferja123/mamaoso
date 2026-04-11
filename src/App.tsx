@@ -5,12 +5,14 @@ import { Truck, MessageCircle } from 'lucide-react';
 // Components
 import { UrgencyBanner } from './components/UrgencyBanner';
 import { HeroSection } from './components/HeroSection';
+import { ProblemSection } from './components/ProblemSection';
 import { VideoSection } from './components/VideoSection';
 import { BenefitsGrid } from './components/BenefitsGrid';
+import { ExpertEndorsement } from './components/ExpertEndorsement';
 import { SolutionSection } from './components/SolutionSection';
 import { IngredientsSection } from './components/IngredientsSection';
 import { ReviewsSection } from './components/ReviewsSection';
-import { MiddleCTA } from './components/MiddleCTA';
+import { GuaranteeSection } from './components/GuaranteeSection';
 import { OrderForm } from './components/OrderForm';
 
 export default function App() {
@@ -32,7 +34,7 @@ export default function App() {
         const rect = orderEl.getBoundingClientRect();
         orderVisible = rect.top < window.innerHeight && rect.bottom > 0;
       }
-      setShowFloatingCTA(scrollPos > 400 && !orderVisible);
+      setShowFloatingCTA(scrollPos > 500 && !orderVisible);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -54,57 +56,56 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-brand-light font-body text-slate-900">
-      {/* Sticky Urgency Banner */}
+    <div className="min-h-screen bg-white font-body text-slate-900">
+      {/* 1. Sticky Urgency Banner */}
       <UrgencyBanner timeLeft={timeLeft} formatTime={formatTime} />
 
       <main>
-        {/* Hero with Product */}
+        {/* 2. Hero: Product + CTA + Trust Badges */}
         <HeroSection onOrderClick={scrollToOrder} />
 
-        {/* CTA after Hero */}
-        <MiddleCTA onOrderClick={scrollToOrder} />
+        {/* 3. Problem Agitation: Pain points + Solution intro */}
+        <ProblemSection onOrderClick={scrollToOrder} />
 
-        {/* TikTok-Style Interactive Video */}
+        {/* 4. Product Showcase Video / Interactive Reel */}
         <VideoSection onOrderClick={scrollToOrder} />
 
-        {/* What It Does - Benefits */}
+        {/* 5. Benefits: What does it do? (Specific to Neuropathy) */}
         <BenefitsGrid />
 
-        {/* CTA after Benefits */}
-        <MiddleCTA
-          onOrderClick={scrollToOrder}
-          text="COMPRAR AHORA"
-          subtext="Oferta por tiempo limitado · Stock reducido"
-        />
+        {/* 6. Expert Endorsement: Trust anchor with Medical Professional */}
+        <ExpertEndorsement />
 
-        {/* How to Use + Target Audience */}
+        {/* 7. How To Use + Product Detail + Who It's For */}
         <SolutionSection onOrderClick={scrollToOrder} />
 
-        {/* Ingredients */}
+        {/* 8. Ingredients + Product Images */}
         <IngredientsSection />
 
-        {/* CTA after Ingredients */}
-        <MiddleCTA
-          onOrderClick={scrollToOrder}
-          text="¡LO NECESITO!"
-          subtext="Garantía de devolución de 90 días"
-        />
-
-        {/* Reviews with Photos */}
+        {/* 9. Social Proof: Reviews with photos */}
         <ReviewsSection />
 
-        {/* Order Form */}
+        {/* 10. Guarantee Promise: Risk reversal */}
+        <GuaranteeSection />
+
+        {/* 11. Order Form with Pack Images */}
         <OrderForm stock={stock} />
       </main>
 
       {/* Footer */}
-      <footer className="bg-brand-dark py-10 px-4 text-center border-t border-brand-primary/10">
-        <div className="max-w-7xl mx-auto space-y-4">
-          <div className="text-brand-primary font-heading font-black text-2xl uppercase tracking-tighter">MAMA OSO ORIGINAL</div>
-          <p className="text-slate-400 text-[10px] uppercase tracking-widest font-bold">© 2026 Mama Oso Perú · Con Registro Sanitario · Todos los derechos reservados</p>
-          <p className="text-[9px] text-slate-500 max-w-lg mx-auto italic leading-relaxed">
-            Este producto cuenta con Registro Sanitario. Los resultados pueden variar. No reemplaza el consejo médico profesional.
+      <footer className="bg-slate-900 py-12 px-4 text-center border-t border-brand-primary/10">
+        <div className="max-w-5xl mx-auto space-y-4">
+          <div className="text-brand-primary font-heading font-black text-2xl uppercase tracking-tight">MAMA OSO ORIGINAL</div>
+          <p className="text-slate-500 text-[10px] uppercase tracking-widest font-bold">© 2026 Mama Oso Perú · Con Registro Sanitario · Todos los derechos reservados</p>
+          <div className="flex flex-wrap justify-center gap-4 text-slate-400 text-[10px] uppercase font-bold tracking-widest">
+            <span>Envío Gratis</span>
+            <span className="text-white/20">|</span>
+            <span>Pago Contraentrega</span>
+            <span className="text-white/20">|</span>
+            <span>Garantía de Satisfacción</span>
+          </div>
+          <p className="text-[9px] text-slate-600 max-w-md mx-auto italic leading-relaxed pt-4">
+            Este producto cuenta con Registro Sanitario. Los resultados pueden variar dependiendo de la condición física de cada persona. No reemplaza el consejo médico profesional ni pretende diagnosticar enfermedades.
           </p>
         </div>
       </footer>
@@ -112,8 +113,8 @@ export default function App() {
       {/* Floating CTA + WhatsApp */}
       <AnimatePresence>
         {showFloatingCTA && (
-          <div className="fixed bottom-4 left-4 right-4 md:left-auto md:right-6 md:bottom-6 z-[150] flex flex-col md:flex-row items-stretch md:items-end gap-3">
-            {/* WhatsApp Button */}
+          <div className="fixed bottom-4 left-4 right-4 md:left-auto md:right-6 md:bottom-6 z-[150] flex items-end gap-3">
+            {/* WhatsApp */}
             <motion.a
               href="https://wa.me/51919749480?text=Hola,%20quiero%20información%20sobre%20la%20Crema%20Mama%20Oso"
               target="_blank"
@@ -121,21 +122,21 @@ export default function App() {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0 }}
-              className="bg-green-500 text-white h-14 w-14 rounded-full shadow-2xl flex items-center justify-center border-4 border-white hover:bg-green-600 transition-colors shadow-green-500/40 self-end md:self-auto"
+              className="bg-green-500 text-white h-12 w-12 rounded-full shadow-2xl flex items-center justify-center border-3 border-white hover:bg-green-600 transition-colors shadow-green-500/40 shrink-0"
             >
-              <MessageCircle className="w-7 h-7 fill-white" />
+              <MessageCircle className="w-6 h-6 fill-white" />
             </motion.a>
 
-            {/* Floating Order Button - Full width on mobile */}
+            {/* Order CTA */}
             <motion.button
-              initial={{ y: 50, opacity: 0 }}
+              initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 50, opacity: 0 }}
+              exit={{ y: 30, opacity: 0 }}
               whileTap={{ scale: 0.95 }}
               onClick={scrollToOrder}
-              className="bg-brand-primary text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center justify-center gap-3 border-2 border-white/20 uppercase font-black text-sm tracking-wider shadow-brand-primary/40 w-full md:w-auto"
+              className="bg-brand-primary text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center justify-center gap-2 border-2 border-white/20 uppercase font-black text-xs tracking-wider shadow-brand-primary/40 flex-1 md:flex-none"
             >
-              <Truck className="w-5 h-5" />
+              <Truck className="w-4 h-4" />
               ORDENAR AHORA
             </motion.button>
           </div>

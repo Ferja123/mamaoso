@@ -76,31 +76,19 @@ export const OrderForm: React.FC<OrderFormProps> = ({ stock }) => {
   };
 
   // Helper function to render CSS-based jar bundles
+  const packImages: Record<number, string> = {
+    1: '/pack_1.png',
+    2: '/pack_2.png',
+    3: '/pack_3.png',
+  };
+
   const renderJars = (quantity: number) => {
-    if (quantity === 1) {
-      return (
-        <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-2 md:mb-4 relative flex items-center justify-center">
-          <img src="/mama_oso_original_white.png" alt="1 Frasco" className="w-[85%] h-auto object-contain drop-shadow-md" />
-        </div>
-      );
-    }
-    if (quantity === 2) {
-      return (
-        <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-2 md:mb-4 relative">
-          <img src="/mama_oso_original_white.png" alt="Frasco Izquierdo" className="absolute w-[60%] left-0 top-2 object-contain drop-shadow-md z-0" />
-          <img src="/mama_oso_original_white.png" alt="Frasco Derecho" className="absolute w-[70%] right-0 top-0 object-contain drop-shadow-xl z-10" />
-        </div>
-      );
-    }
-    if (quantity === 3) {
-      return (
-        <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-2 md:mb-4 relative">
-          <img src="/mama_oso_original_white.png" alt="Frasco Atrás Izquierda" className="absolute w-[50%] left-0 top-3 object-contain drop-shadow-md z-0" />
-          <img src="/mama_oso_original_white.png" alt="Frasco Atrás Derecha" className="absolute w-[50%] right-0 top-3 object-contain drop-shadow-md z-0" />
-          <img src="/mama_oso_original_white.png" alt="Frasco Centro" className="absolute w-[65%] left-1/2 -translate-x-1/2 top-0 object-contain drop-shadow-2xl z-10" />
-        </div>
-      );
-    }
+    const src = packImages[quantity] || '/pack_1.png';
+    return (
+      <div className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-2 md:mb-4 flex items-center justify-center">
+        <img src={src} alt={`${quantity} Frasco(s)`} className="w-full h-full object-contain drop-shadow-lg" />
+      </div>
+    );
   };
 
   return (
