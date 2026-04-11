@@ -11,7 +11,7 @@ export const BenefitsGrid: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 px-4 bg-slate-50 relative overflow-hidden">
+    <section className="py-16 md:py-24 px-4 bg-slate-50 relative overflow-hidden">
       {/* Decorative Blob */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-primary/5 rounded-full blur-[100px] -z-10" />
 

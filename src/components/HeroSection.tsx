@@ -8,22 +8,22 @@ interface HeroProps {
 
 export const HeroSection: React.FC<HeroProps> = ({ onOrderClick }) => {
   return (
-    <section className="relative pt-16 pb-24 overflow-hidden px-4 bg-brand-light">
+    <section className="relative pt-10 pb-12 md:pt-16 md:pb-24 overflow-hidden px-4 bg-brand-light">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full -z-10 bg-gradient-to-b from-brand-primary/5 to-transparent rounded-b-[100px]" />
       
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
         <motion.div 
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="space-y-8 text-center lg:text-left"
+          className="space-y-5 md:space-y-8 text-center lg:text-left"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 border border-brand-primary/20 text-brand-secondary font-bold text-xs uppercase tracking-widest">
             <Sparkles className="w-3 h-3" /> 
             Alivio Rápido y Efectivo
           </div>
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-black text-brand-dark leading-[1.05]">
+          <h1 className="text-3xl md:text-5xl lg:text-7xl font-heading font-black text-brand-dark leading-[1.05]">
             Relajación Muscular <span className="text-brand-primary">Garantizada.</span>
           </h1>
           

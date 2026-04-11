@@ -12,7 +12,7 @@ export const IngredientsSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 px-4 bg-brand-dark text-white overflow-hidden relative">
+    <section className="py-16 md:py-24 px-4 bg-brand-dark text-white overflow-hidden relative">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-primary/10 blur-[120px] rounded-full -z-10" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-secondary/10 blur-[120px] rounded-full -z-10" />
 

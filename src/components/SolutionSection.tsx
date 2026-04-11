@@ -4,7 +4,7 @@ import { Activity, Thermometer, UserCheck, Droplet } from 'lucide-react';
 
 export const SolutionSection: React.FC = () => {
   return (
-    <section className="py-24 px-4 bg-white overflow-hidden">
+    <section className="py-16 md:py-24 px-4 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto space-y-32">
         {/* Sub-section: Target Audience & Pain Points */}
         <div className="grid md:grid-cols-2 gap-16 items-center">

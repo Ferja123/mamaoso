@@ -117,7 +117,7 @@ export const OrderForm: React.FC<OrderFormProps> = ({ stock }) => {
   };
 
   return (
-    <section id="ordenar" className="py-24 px-4 bg-slate-50 relative">
+    <section id="ordenar" className="py-12 md:py-24 px-4 bg-slate-50 relative">
       <div className="max-w-5xl mx-auto space-y-12">
         <div className="text-center space-y-4">
            <h2 className="text-4xl md:text-6xl font-heading font-black text-brand-navy">Completa tu Pedido</h2>
