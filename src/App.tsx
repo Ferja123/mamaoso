@@ -79,7 +79,7 @@ export default function App() {
         />
 
         {/* How to Use + Target Audience */}
-        <SolutionSection />
+        <SolutionSection onOrderClick={scrollToOrder} />
 
         {/* Ingredients */}
         <IngredientsSection />

@@ -1,139 +1,91 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Play, ShieldCheck, Users, Award } from 'lucide-react';
+import { ShieldCheck, Users, Award, Sparkles, ArrowDown } from 'lucide-react';
 
 export const VideoSection: React.FC<{ onOrderClick: () => void }> = ({ onOrderClick }) => {
   return (
-    <section className="py-16 md:py-24 px-4 bg-brand-dark relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-full opacity-5">
-        <div className="absolute top-10 left-10 w-72 h-72 bg-brand-primary rounded-full blur-[100px]" />
-        <div className="absolute bottom-10 right-10 w-96 h-96 bg-brand-secondary rounded-full blur-[120px]" />
-      </div>
+    <section className="py-12 md:py-20 px-4 bg-gradient-to-b from-slate-900 via-brand-dark to-slate-900 relative overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-primary/15 rounded-full blur-[120px]" />
 
-      <div className="max-w-5xl mx-auto relative z-10">
-        <div className="text-center mb-10 space-y-3">
-          <h2 className="text-3xl md:text-5xl font-heading font-black text-white">
-            Mira Cómo <span className="text-brand-primary">Funciona</span>
+      <div className="max-w-4xl mx-auto relative z-10">
+        <div className="text-center mb-8 space-y-3">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-primary/30 text-brand-primary font-bold text-[10px] uppercase tracking-widest bg-brand-primary/5">
+            <Sparkles className="w-3 h-3" /> Producto Estrella
+          </div>
+          <h2 className="text-2xl md:text-4xl font-heading font-black text-white">
+            ¿Por Qué <span className="text-brand-primary">Mama Oso</span> es Diferente?
           </h2>
-          <p className="text-slate-400 max-w-xl mx-auto text-sm md:text-base">
-            Miles de personas ya experimentan alivio inmediato con la Crema Mama Oso. Descubre cómo puede ayudarte a ti también.
-          </p>
         </div>
 
-        {/* Video Container - Interactive TikTok Style */}
-        <div className="relative max-w-2xl mx-auto">
+        {/* Interactive Product Showcase - Mobile First */}
+        <div className="relative max-w-sm mx-auto">
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-white/10 aspect-[9/14] md:aspect-video bg-gradient-to-br from-brand-dark via-slate-900 to-brand-dark cursor-pointer group"
-            onClick={onOrderClick}
+            className="relative bg-gradient-to-br from-white/10 to-white/5 rounded-[2rem] border border-white/10 backdrop-blur-sm p-6 md:p-8"
           >
-            {/* Animated Product Showcase */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="relative">
-                <motion.img
-                  src="/mama_oso_original_white.png"
-                  alt="Mama Oso Crema"
-                  className="w-48 md:w-64 object-contain drop-shadow-2xl"
-                  animate={{ y: [0, -10, 0], rotate: [0, 2, -2, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                />
-                {/* Glow effect */}
-                <div className="absolute -inset-8 bg-brand-primary/20 rounded-full blur-3xl -z-10 animate-pulse" />
-              </div>
+            {/* Product Image with Float Animation */}
+            <div className="flex justify-center mb-6">
+              <motion.img
+                src="/mama_oso_original_white.png"
+                alt="Mama Oso Crema Original"
+                className="w-52 md:w-64 object-contain drop-shadow-[0_20px_40px_rgba(16,185,129,0.3)]"
+                animate={{ y: [0, -12, 0] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              />
             </div>
 
-            {/* Floating Info Cards */}
-            <motion.div
-              className="absolute top-6 left-4 md:left-6 bg-white/95 backdrop-blur-sm rounded-2xl p-3 shadow-xl max-w-[180px]"
-              animate={{ y: [0, -5, 0] }}
-              transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
+            {/* Key Features */}
+            <div className="grid gap-3">
+              {[
+                { icon: <ShieldCheck className="w-4 h-4 text-white" />, bg: 'bg-green-500', title: 'Registro Sanitario', sub: 'Producto certificado y regulado' },
+                { icon: <Users className="w-4 h-4 text-white" />, bg: 'bg-brand-primary', title: '+1679 Clientes Satisfechos', sub: 'En todo el Perú' },
+                { icon: <Award className="w-4 h-4 text-white" />, bg: 'bg-yellow-500', title: 'Alta Demanda 🔥', sub: 'Producto de alta rotación' },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.15 }}
+                  className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-3 border border-white/5"
+                >
+                  <div className={`w-8 h-8 ${item.bg} rounded-lg flex items-center justify-center shrink-0`}>
+                    {item.icon}
+                  </div>
+                  <div>
+                    <p className="text-white font-bold text-sm">{item.title}</p>
+                    <p className="text-white/50 text-xs">{item.sub}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* CTA Button */}
+            <motion.button
+              whileTap={{ scale: 0.95 }}
+              onClick={onOrderClick}
+              className="w-full mt-6 bg-brand-primary text-white font-black py-4 rounded-2xl text-base flex items-center justify-center gap-2 shadow-xl shadow-brand-primary/30 hover:bg-brand-secondary transition-colors"
             >
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center shrink-0">
-                  <ShieldCheck className="w-4 h-4 text-white" />
-                </div>
-                <div>
-                  <p className="text-[9px] font-black text-brand-dark uppercase">Registro Sanitario</p>
-                  <p className="text-[8px] text-slate-500">Producto Certificado</p>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="absolute top-6 right-4 md:right-6 bg-white/95 backdrop-blur-sm rounded-2xl p-3 shadow-xl max-w-[180px]"
-              animate={{ y: [0, -5, 0] }}
-              transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-            >
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-brand-primary rounded-full flex items-center justify-center shrink-0">
-                  <Users className="w-4 h-4 text-white" />
-                </div>
-                <div>
-                  <p className="text-[9px] font-black text-brand-dark uppercase">+1679 Clientes</p>
-                  <p className="text-[8px] text-slate-500">Satisfechos en Perú</p>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="absolute bottom-20 left-4 md:left-6 bg-white/95 backdrop-blur-sm rounded-2xl p-3 shadow-xl max-w-[200px]"
-              animate={{ y: [0, -5, 0] }}
-              transition={{ duration: 3, repeat: Infinity, delay: 1.5 }}
-            >
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center shrink-0">
-                  <Award className="w-4 h-4 text-white" />
-                </div>
-                <div>
-                  <p className="text-[9px] font-black text-brand-dark uppercase">Alta Demanda 🔥</p>
-                  <p className="text-[8px] text-slate-500">Producto de Alta Rotación</p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Play Button Overlay */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <motion.div
-                className="w-20 h-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border-2 border-white/30 group-hover:scale-110 transition-transform"
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                <Play className="w-8 h-8 text-white fill-white ml-1" />
-              </motion.div>
-            </div>
-
-            {/* Bottom CTA Overlay */}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6">
-              <div className="text-center">
-                <p className="text-white font-black text-lg md:text-xl mb-2">¡Ordena la Tuya Ahora!</p>
-                <p className="text-white/70 text-xs">Toca para ir al formulario de pedido</p>
-              </div>
-            </div>
-
-            {/* TikTok-style engagement indicators */}
-            <div className="absolute right-3 bottom-24 flex flex-col items-center gap-4">
-              <div className="text-center">
-                <div className="w-10 h-10 bg-white/10 backdrop-blur rounded-full flex items-center justify-center mb-1">
-                  <span className="text-lg">❤️</span>
-                </div>
-                <span className="text-white text-[10px] font-bold">15.2k</span>
-              </div>
-              <div className="text-center">
-                <div className="w-10 h-10 bg-white/10 backdrop-blur rounded-full flex items-center justify-center mb-1">
-                  <span className="text-lg">💬</span>
-                </div>
-                <span className="text-white text-[10px] font-bold">892</span>
-              </div>
-              <div className="text-center">
-                <div className="w-10 h-10 bg-white/10 backdrop-blur rounded-full flex items-center justify-center mb-1">
-                  <span className="text-lg">🔗</span>
-                </div>
-                <span className="text-white text-[10px] font-bold">Pedir</span>
-              </div>
-            </div>
+              PEDIR AHORA <ArrowDown className="w-5 h-5 animate-bounce" />
+            </motion.button>
           </motion.div>
+        </div>
+
+        {/* Trust Stats Row */}
+        <div className="flex justify-center gap-6 md:gap-12 mt-10 text-center">
+          {[
+            { value: '100g', label: 'Contenido' },
+            { value: '98%', label: 'Satisfacción' },
+            { value: '90d', label: 'Garantía' },
+          ].map((stat, i) => (
+            <div key={i}>
+              <div className="text-2xl md:text-3xl font-black text-brand-primary">{stat.value}</div>
+              <div className="text-[10px] text-white/40 font-bold uppercase tracking-widest">{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
