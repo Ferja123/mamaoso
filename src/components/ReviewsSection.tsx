@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Star, Quote, ChevronLeft, ChevronRight, ThumbsUp } from 'lucide-react';
+import { Star, ThumbsUp, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export const ReviewsSection: React.FC = () => {
-  const [visibleCount, setVisibleCount] = useState(4);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   const reviews = [
     {
@@ -41,7 +41,7 @@ export const ReviewsSection: React.FC = () => {
     {
       name: "Jorge Quispe",
       location: "Trujillo, Perú",
-      text: "Trabajo en construcción y los dolores musculares eran terribles al final del día. Mi esposa me compró esta crema y desde la primera semana noté un alivio increíble. Ahora la uso todas las noches sin falta.",
+      text: "Trabajo en construcción y los dolores musculares eran terribles al final del día. Mi esposa me compró esta crema y desde la primera semana noté un alivio increíble.",
       img: "/review_4.png",
       rating: 5,
       time: "Hace 5 días"
@@ -49,111 +49,100 @@ export const ReviewsSection: React.FC = () => {
     {
       name: "Lucía Fernández",
       location: "Lima, Perú",
-      text: "Soy maratonista y después de cada entrenamiento mis piernas quedaban destrozadas. Con Mama Oso la recuperación es mucho más rápida. Lo aplico después de correr y al día siguiente estoy lista para entrenar de nuevo.",
+      text: "Soy maratonista y después de cada entrenamiento mis piernas quedaban destrozadas. Con Mama Oso la recuperación es mucho más rápida.",
       img: "/review_5.png",
       rating: 5,
       time: "Hace 4 días"
-    },
-    {
-      name: "Don Pedro Huamán",
-      location: "Huancayo, Perú",
-      text: "Tengo 72 años y mis rodillas ya no me dejaban caminar tranquilo. Mi hija me regaló esta cremita y es lo mejor que me han dado. Me la pongo por las mañanas y puedo salir a caminar al parque sin problemas.",
-      img: "/review_6.png",
-      rating: 5,
-      time: "Hace 1 semana"
-    },
-    {
-      name: "Ana María Torres",
-      location: "Piura, Perú",
-      text: "Me encanta la textura, se absorbe super rápido y no deja sensación grasosa. El aroma a eucalipto es muy agradable y siento el frescor al instante. Ya voy por mi tercer frasco y no pienso dejarlo.",
-      img: "/review_7.png",
-      rating: 5,
-      time: "Hace 3 días"
     }
   ];
 
-  const showMore = () => {
-    setVisibleCount(prev => Math.min(prev + 4, reviews.length));
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const { scrollLeft, clientWidth } = scrollRef.current;
+      const scrollTo = direction === 'left' ? scrollLeft - 320 : scrollLeft + 320;
+      scrollRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
+    }
   };
 
   return (
-    <section className="py-16 md:py-24 px-4 bg-brand-light">
+    <section className="py-16 md:py-24 px-4 bg-brand-light overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-          <div className="inline-flex justify-center items-center gap-1 text-yellow-500 mb-2">
-            {[1, 2, 3, 4, 5].map(i => <Star key={i} className="w-5 h-5 fill-current" />)}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div className="space-y-3">
+            <div className="flex items-center gap-1 text-yellow-500 mb-2">
+              {[1, 2, 3, 4, 5].map(i => <Star key={i} className="w-5 h-5 fill-current" />)}
+            </div>
+            <h2 className="text-3xl md:text-5xl font-heading font-black text-brand-dark max-w-xl">
+              Lo que dicen nuestros <span className="text-brand-primary">clientes</span>
+            </h2>
           </div>
-          <h2 className="text-3xl md:text-5xl font-heading font-black text-brand-dark">
-            +1679 Clientes <span className="text-brand-primary">Satisfechos</span>
-          </h2>
-          <p className="text-slate-500 text-base">Recomendado por miles de clientes en todo el Perú que ya han recuperado su tranquilidad.</p>
+          <div className="flex gap-3">
+            <button 
+              onClick={() => scroll('left')}
+              className="w-12 h-12 rounded-full border-2 border-brand-primary/20 flex items-center justify-center text-brand-primary hover:bg-brand-primary hover:text-white transition-all shadow-sm"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button 
+              onClick={() => scroll('right')}
+              className="w-12 h-12 rounded-full border-2 border-brand-primary/20 flex items-center justify-center text-brand-primary hover:bg-brand-primary hover:text-white transition-all shadow-sm"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
         </div>
 
-        {/* Stats Bar */}
-        <div className="grid grid-cols-3 gap-3 mb-12 max-w-lg mx-auto">
-          <div className="bg-white rounded-2xl p-4 text-center shadow-sm border border-slate-100">
-            <div className="text-2xl font-black text-brand-primary">98%</div>
-            <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Satisfechos</div>
-          </div>
-          <div className="bg-white rounded-2xl p-4 text-center shadow-sm border border-slate-100">
-            <div className="text-2xl font-black text-brand-primary">4.9</div>
-            <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Calificación</div>
-          </div>
-          <div className="bg-white rounded-2xl p-4 text-center shadow-sm border border-slate-100">
-            <div className="text-2xl font-black text-brand-primary">1679+</div>
-            <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Reseñas</div>
-          </div>
-        </div>
-
-        {/* Review Cards */}
-        <div className="grid md:grid-cols-2 gap-4 md:gap-6">
-          {reviews.slice(0, visibleCount).map((review, i) => (
+        {/* Horizontal Scroll Container */}
+        <div 
+          ref={scrollRef}
+          className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory no-scrollbar"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {reviews.map((review, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: (i % 4) * 0.08 }}
-              className="bg-white p-5 md:p-6 rounded-2xl shadow-md border border-slate-100 flex flex-col relative group hover:shadow-xl transition-shadow"
+              className="min-w-[300px] md:min-w-[380px] bg-white p-6 md:p-8 rounded-[2rem] shadow-xl border border-slate-100 flex flex-col snap-start"
             >
-              <div className="flex items-start gap-4 mb-4">
-                <img src={review.img} alt={review.name} className="w-14 h-14 rounded-full object-cover border-2 border-brand-primary/20 shadow-sm shrink-0" />
-                <div className="flex-1 min-w-0">
-                  <p className="font-bold text-brand-dark text-sm truncate">{review.name}</p>
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">{review.location}</p>
-                  <div className="flex gap-0.5 mt-1">
-                    {Array.from({ length: review.rating }).map((_, s) => (
-                      <Star key={s} className="w-3 h-3 text-yellow-500 fill-current" />
-                    ))}
-                  </div>
+              <div className="flex items-center gap-4 mb-6">
+                <img 
+                  src={review.img} 
+                  alt={review.name} 
+                  className="w-16 h-16 rounded-full object-cover border-4 border-brand-primary/10" 
+                />
+                <div>
+                  <p className="font-bold text-brand-dark">{review.name}</p>
+                  <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">{review.location}</p>
                 </div>
-                <span className="text-[10px] text-slate-400 shrink-0 font-medium">{review.time}</span>
               </div>
 
-              <p className="text-slate-600 text-sm leading-relaxed flex-grow">
+              <div className="flex gap-0.5 mb-4">
+                {Array.from({ length: 5 }).map((_, s) => (
+                  <Star key={s} className="w-4 h-4 text-yellow-500 fill-current" />
+                ))}
+              </div>
+
+              <p className="text-slate-600 leading-relaxed mb-8 flex-grow italic">
                 "{review.text}"
               </p>
 
-              <div className="flex items-center gap-2 mt-4 pt-3 border-t border-slate-50">
-                <ThumbsUp className="w-3 h-3 text-brand-primary" />
-                <span className="text-[10px] text-slate-400 font-bold">Compra verificada ✓</span>
+              <div className="flex items-center justify-between pt-6 border-t border-slate-50">
+                <div className="flex items-center gap-2">
+                  <ThumbsUp className="w-4 h-4 text-brand-primary" />
+                  <span className="text-xs font-black text-slate-400 uppercase">Compra Verificada</span>
+                </div>
+                <span className="text-xs text-slate-300">{review.time}</span>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Show More Button */}
-        {visibleCount < reviews.length && (
-          <div className="text-center mt-8">
-            <button
-              onClick={showMore}
-              className="px-8 py-3 bg-white border-2 border-brand-primary/20 text-brand-primary font-bold text-sm rounded-full hover:bg-brand-primary hover:text-white transition-all"
-            >
-              Ver más reseñas ({reviews.length - visibleCount} restantes)
-            </button>
-          </div>
-        )}
+        {/* CSS for hiding scrollbar */}
+        <style dangerouslySetInnerHTML={{ __html: `
+          .no-scrollbar::-webkit-scrollbar {
+            display: none;
+          }
+        `}} />
       </div>
     </section>
   );

@@ -75,20 +75,37 @@ export const OrderForm: React.FC<OrderFormProps> = ({ stock }) => {
     setIsConfirmModalOpen(false);
   };
 
-  // Helper function to render CSS-based jar bundles
-  const packImages: Record<number, string> = {
-    1: '/pack_1.png',
-    2: '/pack_2.png',
-    3: '/pack_3.png',
-  };
-
   const renderJars = (quantity: number) => {
-    const src = packImages[quantity] || '/pack_1.png';
-    return (
-      <div className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-2 md:mb-4 flex items-center justify-center">
-        <img src={src} alt={`${quantity} Frasco(s)`} className="w-full h-full object-contain drop-shadow-lg" />
-      </div>
-    );
+    const jarSrc = '/mama_oso_verified.png';
+    
+    if (quantity === 1) {
+      return (
+        <div className="w-20 h-20 md:w-28 md:h-28 mx-auto mb-4 relative flex items-center justify-center">
+          <img src={jarSrc} alt="1 Frasco" className="w-[85%] h-auto object-contain drop-shadow-xl" />
+        </div>
+      );
+    }
+    
+    if (quantity === 2) {
+      return (
+        <div className="w-20 h-20 md:w-28 md:h-28 mx-auto mb-4 relative">
+          <img src={jarSrc} alt="Frasco 1" className="absolute w-[70%] left-0 top-2 object-contain drop-shadow-lg z-0 opacity-80" />
+          <img src={jarSrc} alt="Frasco 2" className="absolute w-[80%] right-0 top-0 object-contain drop-shadow-2xl z-10" />
+        </div>
+      );
+    }
+    
+    if (quantity === 3) {
+      return (
+        <div className="w-20 h-20 md:w-28 md:h-28 mx-auto mb-4 relative">
+          <img src={jarSrc} alt="Frasco 1" className="absolute w-[60%] left-0 top-4 object-contain drop-shadow-md z-0 opacity-60" />
+          <img src={jarSrc} alt="Frasco 2" className="absolute w-[60%] right-0 top-4 object-contain drop-shadow-md z-0 opacity-60" />
+          <img src={jarSrc} alt="Frasco 3" className="absolute w-[85%] left-1/2 -translate-x-1/2 top-0 object-contain drop-shadow-2xl z-10" />
+        </div>
+      );
+    }
+    
+    return null;
   };
 
   return (

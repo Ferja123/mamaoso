@@ -60,7 +60,7 @@ export const ProblemSection: React.FC<ProblemSectionProps> = ({ onOrderClick }) 
           className="bg-gradient-to-r from-brand-primary/20 to-green-500/20 border border-brand-primary/30 rounded-3xl p-6 md:p-8 text-center"
         >
           <div className="flex flex-col md:flex-row items-center gap-6">
-            <img src="/mama_oso_original_white.png" alt="Mama Oso" className="w-24 md:w-32 object-contain drop-shadow-xl" />
+            <img src="/mama_oso_verified.png" alt="Mama Oso" className="w-24 md:w-32 object-contain drop-shadow-xl" />
             <div className="text-left space-y-2 flex-1">
               <h3 className="text-xl md:text-2xl font-black">La Crema Mama Oso ataca la raíz del problema</h3>
               <p className="text-slate-300 text-sm leading-relaxed">
