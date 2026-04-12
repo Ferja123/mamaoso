@@ -22,9 +22,9 @@ export const OrderForm: React.FC<OrderFormProps> = ({ stock }) => {
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
 
   const packs = [
-    { label: 'Pruébalo', title: '1 Crema', price: '109.00', quantity: 1, saved: '' },
-    { label: 'Más Popular', title: '2 Cremas', price: '189.00', quantity: 2, saved: '¡Ahorra S/29!' },
-    { label: 'Mejor Valor', title: '3 Cremas', price: '249.00', quantity: 3, saved: '¡Ahorra S/78!' }
+    { label: 'Pruébalo', title: '1 Crema', price: '109.00', originalPrice: '185.00', quantity: 1, saved: '40% DSCTO' },
+    { label: 'Más Popular', title: '2 Cremas', price: '189.00', originalPrice: '315.00', quantity: 2, saved: '¡Ahorra S/126!' },
+    { label: 'Mejor Valor', title: '3 Cremas', price: '249.00', originalPrice: '415.00', quantity: 3, saved: '¡Ahorra S/166!' }
   ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -154,8 +154,11 @@ export const OrderForm: React.FC<OrderFormProps> = ({ stock }) => {
                   {renderJars(pack.quantity)}
 
                   <h4 className="text-brand-dark font-bold text-xs md:text-sm">{pack.title}</h4>
-                  <div className="text-xl md:text-2xl font-black text-brand-dark">S/ {pack.price}</div>
-                  {pack.saved && <div className="text-[9px] md:text-[10px] font-bold text-green-600 mt-1">{pack.saved}</div>}
+                  <div className="flex flex-col items-center">
+                    <span className="text-[10px] md:text-xs text-slate-400 line-through font-bold">S/ {pack.originalPrice}</span>
+                    <div className="text-xl md:text-2xl font-black text-brand-dark leading-tight">S/ {pack.price}</div>
+                  </div>
+                  {pack.saved && <div className="text-[9px] md:text-[10px] font-black text-white bg-green-500 px-2 py-0.5 rounded-full mt-1 inline-block">{pack.saved}</div>}
 
                   <AnimatePresence>
                     {paquete.includes(pack.title) && (
