@@ -10,7 +10,7 @@ export const ReviewsSection: React.FC = () => {
       name: "Carmen Mendoza",
       location: "San Martín de Porres, Lima",
       text: "Sufría de dolores terribles en la espalda y las rodillas. Desde que uso MAMAOSO, puedo caminar y hacer mis cosas sin problema. La aplico 3 veces al día y el alivio es increíble.",
-      img: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=150&h=150&fit=crop",
+      img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150",
       rating: 5,
       time: "Hace 2 semanas"
     },
@@ -18,7 +18,7 @@ export const ReviewsSection: React.FC = () => {
       name: "Rosario Gomez",
       location: "Cusco, Perú",
       text: "Tengo artritis y el dolor en mis manos era insoportable por el frío. MAMAOSO me ha devuelto la movilidad. La textura es suave, se absorbe rápido y no deja manchas. ¡La recomiendo!",
-      img: "https://images.unsplash.com/photo-1544168190-79c15427015d?w=150&h=150&fit=crop",
+      img: "https://images.unsplash.com/photo-1567532939604-b635b086f240?w=150",
       rating: 5,
       time: "Hace 3 semanas"
     },
@@ -26,7 +26,7 @@ export const ReviewsSection: React.FC = () => {
       name: "Martha Medina",
       location: "Chanchamayo, Junín",
       text: "Después de mis caminatas por el mercado, mis piernas quedaban adoloridas e hinchadas. Con MAMAOSO la recuperación es mucho más rápida. Me echo y al día siguiente estoy como nueva.",
-      img: "https://images.unsplash.com/photo-1581578731548-c64695cc6958?w=150&h=150&fit=crop",
+      img: "https://images.unsplash.com/photo-1548142813-c348350df52b?w=150",
       rating: 5,
       time: "Hace 1 mes"
     },
@@ -34,7 +34,7 @@ export const ReviewsSection: React.FC = () => {
       name: "Julio Reyes",
       location: "Cerro Colorado, Arequipa",
       text: "He probado muchas cremas de la farmacia para el dolor muscular y ninguna me funcionó como esta crema. El eucalipto te da una frescura inmediata.",
-      img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop",
+      img: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=150",
       rating: 5,
       time: "Hace 1 semana"
     },
@@ -42,7 +42,7 @@ export const ReviewsSection: React.FC = () => {
       name: "Jorge Quispe",
       location: "Trujillo, Perú",
       text: "Trabajo en construcción y las punzadas en la cintura eran terribles al final del día. Mi esposa me compró MAMAOSO y desde la primera semana noté tremendo alivio.",
-      img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop",
+      img: "https://images.unsplash.com/photo-1506803682981-6e71802de3bb?w=150",
       rating: 5,
       time: "Hace 5 días"
     },
@@ -50,7 +50,7 @@ export const ReviewsSection: React.FC = () => {
       name: "Lucía Fernández",
       location: "Villa El Salvador, Lima",
       text: "Soy muy activa y mis rodillas empezaron a fallar por la edad. Aplicarme MAMAOSO antes y después de salir a caminar ha regresado el confort a mis articulaciones.",
-      img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop",
+      img: "https://images.unsplash.com/photo-1553514029-1318c9127859?w=150",
       rating: 5,
       time: "Hace 4 días"
     },
@@ -58,7 +58,7 @@ export const ReviewsSection: React.FC = () => {
       name: "Ana Velásquez",
       location: "Piura, Perú",
       text: "Compré el paquete de 3 frascos porque a mis papás les encanta. La uña de gato y la árnica hacen un efecto casi mágico. Excelentes resultados de verdad.",
-      img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop",
+      img: "https://images.unsplash.com/photo-1499952126235-582c199d713c?w=150",
       rating: 5,
       time: "Hace 2 meses"
     },
@@ -66,7 +66,7 @@ export const ReviewsSection: React.FC = () => {
       name: "Víctor Huamán",
       location: "El Tambo, Huancayo",
       text: "El hormigueo en mis pies no me dejaba dormir bien por las noches. Desde que la uso en mis pantorrillas y tobillos duermo tranquilo. Es una crema excelente.",
-      img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop",
+      img: "https://images.unsplash.com/photo-1504257404462-8e41f649e0c5?w=150",
       rating: 5,
       time: "Hace 3 días"
     },
@@ -74,7 +74,7 @@ export const ReviewsSection: React.FC = () => {
       name: "Silvia Paredes",
       location: "Ica, Perú",
       text: "Llegó súper rápido y pagué al momento de recibirlo. La crema calienta al frotar y luego refresca. Mi cuello y hombros se sienten mucho más ligeros durante mi turno de trabajo.",
-      img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop",
+      img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150",
       rating: 5,
       time: "Hace 1 mes"
     },
@@ -82,7 +82,7 @@ export const ReviewsSection: React.FC = () => {
       name: "Raúl Cárdenas",
       location: "Callao, Perú",
       text: "Tengo un esguince mal curado de joven que de vez en cuando me mataba de dolor. Esta es la primera pomada natural que de hecho desinflama. Recomendadísimo.",
-      img: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=150&h=150&fit=crop",
+      img: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=150",
       rating: 5,
       time: "Hace 1 semana"
     },
@@ -90,7 +90,7 @@ export const ReviewsSection: React.FC = () => {
       name: "Teresa López",
       location: "Pucallpa, Perú",
       text: "La calidad se siente desde que abres el envase. Se esparce muy rico y no se pega a la ropa. Me calma en minutos los dolores por mala postura.",
-      img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop",
+      img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150",
       rating: 5,
       time: "Hace 6 días"
     }
