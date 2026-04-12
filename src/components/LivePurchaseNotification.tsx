@@ -7,9 +7,27 @@ const products = ['1 Frasco de MAMAOSO', 'Promo 2 Frascos', 'Promo 3 Frascos', '
 const networks = ['TikTok', 'Facebook', 'Instagram'];
 const times = ['hace 1 minuto', 'hace 2 minutos', 'hace 3 minutos', 'hace 5 minutos', 'hace 8 minutos', 'justo ahora'];
 
+const avatars = [
+  'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop',
+  'https://images.unsplash.com/photo-1544168190-79c15427015d?w=100&h=100&fit=crop',
+  'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop',
+  'https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=100&h=100&fit=crop',
+  'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop',
+  'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop',
+  'https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=100&h=100&fit=crop',
+  'https://images.unsplash.com/photo-1531123897727-8f129e1b4dce?w=100&h=100&fit=crop',
+  'https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&h=100&fit=crop',
+  'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=100&h=100&fit=crop',
+  'https://images.unsplash.com/photo-1552058544-f2b08422138a?w=100&h=100&fit=crop',
+  'https://images.unsplash.com/photo-1628157588553-5eeea00af15c?w=100&h=100&fit=crop',
+  'https://images.unsplash.com/photo-1554151228-14d9def656e4?w=100&h=100&fit=crop',
+  'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop',
+  'https://images.unsplash.com/photo-1544711317-0638eb76451a?w=100&h=100&fit=crop'
+];
+
 export const LivePurchaseNotification: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [purchaseData, setPurchaseData] = useState({ name: '', city: '', product: '', time: '', network: '' });
+  const [purchaseData, setPurchaseData] = useState({ name: '', city: '', product: '', time: '', network: '', avatar: '' });
 
   useEffect(() => {
     const triggerNotification = () => {
@@ -18,8 +36,9 @@ export const LivePurchaseNotification: React.FC = () => {
       const product = products[Math.floor(Math.random() * products.length)];
       const time = times[Math.floor(Math.random() * times.length)];
       const network = networks[Math.floor(Math.random() * networks.length)];
+      const avatar = avatars[Math.floor(Math.random() * avatars.length)];
 
-      setPurchaseData({ name, city, product, time, network });
+      setPurchaseData({ name, city, product, time, network, avatar });
       setIsVisible(true);
 
       // Hide after 6 seconds
@@ -65,21 +84,28 @@ export const LivePurchaseNotification: React.FC = () => {
            animate={{ opacity: 1, y: 0, scale: 1 }}
            exit={{ opacity: 0, y: -20, scale: 0.95 }}
            transition={{ type: 'spring', stiffness: 400, damping: 25 }}
-           className="fixed top-20 left-4 right-4 md:top-auto md:bottom-6 md:left-6 md:right-auto md:w-80 z-[160] flex items-center bg-white rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.4)] border border-slate-100 p-3 pr-4 pointer-events-none"
+           className="fixed top-20 left-4 right-4 md:top-auto md:bottom-6 md:left-6 md:right-auto md:w-80 z-[160] flex items-center bg-white rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.4)] border border-slate-100 p-2 pr-4 pointer-events-none"
          >
-           {/* Image */}
-           <div className="w-12 h-12 bg-slate-50 rounded-lg shrink-0 flex items-center justify-center mr-3 border border-slate-100 p-1">
+           {/* Avatar */}
+           <div className="w-12 h-12 shrink-0 mr-3 relative">
              <img 
-               src="/premium_jar_1775966136593.png" 
-               alt="MAMAOSO" 
-               className="w-full h-full object-contain drop-shadow-md"
+               src={purchaseData.avatar} 
+               alt={purchaseData.name} 
+               className="w-full h-full object-cover rounded-lg border-2 border-brand-primary/10"
              />
+             <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-white rounded-full flex items-center justify-center shadow-sm p-0.5">
+                <img 
+                  src="/premium_jar_1775966136593.png" 
+                  alt="prod" 
+                  className="w-full h-full object-contain"
+                />
+             </div>
            </div>
            
            {/* Text Content */}
            <div className="flex-1 min-w-0">
              <div className="flex items-center justify-between mb-0.5 relative">
-               <p className="text-xs font-bold text-slate-800 truncate pr-2">
+               <p className="text-[11px] font-bold text-slate-800 truncate pr-2">
                  {purchaseData.name} de {purchaseData.city}
                </p>
                <div className="flex items-center gap-1 shrink-0">
@@ -90,7 +116,7 @@ export const LivePurchaseNotification: React.FC = () => {
                </div>
              </div>
              
-             <p className="text-[11px] text-slate-500 line-clamp-1 leading-tight mb-1">
+             <p className="text-[10px] text-slate-500 line-clamp-1 leading-tight mb-0.5">
                compró <span className="font-semibold text-brand-primary">{purchaseData.product}</span>
              </p>
              <p className="text-[9px] text-slate-400 font-medium flex items-center gap-1">
