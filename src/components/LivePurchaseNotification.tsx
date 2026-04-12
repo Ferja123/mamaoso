@@ -102,6 +102,3 @@ export const LivePurchaseNotification: React.FC = () => {
     </AnimatePresence>
   );
 };
-    </AnimatePresence>
-  );
-};
