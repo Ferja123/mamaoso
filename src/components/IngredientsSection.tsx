@@ -1,17 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Leaf, HeartPulse, Droplets, FlaskConical, Sparkles } from 'lucide-react';
+import { Leaf, HeartPulse, Droplets, FlaskConical, Sparkles, Shield } from 'lucide-react';
 
 export const IngredientsSection: React.FC = () => {
   const ingredients = [
-    { name: 'Magnesio', role: 'Calmante', desc: 'Ayuda a estabilizar la función nerviosa.', icon: <FlaskConical className="w-5 h-5 text-brand-primary" /> },
-    { name: 'Árnica', role: 'Alivio', desc: 'Alivio de molestias musculares y articulares.', icon: <HeartPulse className="w-5 h-5 text-brand-primary" /> },
-    { name: 'Uña de Gato', role: 'Recuperación', desc: 'Contribuye al bienestar corporal.', icon: <Leaf className="w-5 h-5 text-brand-primary" /> },
-    { name: 'Eucalipto', role: 'Frescura', desc: 'Sensación refrescante y relajante.', icon: <Droplets className="w-5 h-5 text-brand-primary" /> },
-    { name: 'Aloe Vera', role: 'Protección', desc: 'Hidrata y nutre profundamente la piel.', icon: <Leaf className="w-5 h-5 text-brand-primary" /> },
+    { name: 'Árnica', role: 'Analgésico', desc: 'Analgésico y antiinflamatorio natural para alivio del dolor.', icon: <FlaskConical className="w-5 h-5 text-brand-primary" /> },
+    { name: 'Uña de Gato', role: 'Antiinflamatorio', desc: 'Potente antiinflamatorio que contribuye a la recuperación.', icon: <HeartPulse className="w-5 h-5 text-brand-primary" /> },
+    { name: 'Eucalipto', role: 'Circulatorio', desc: 'Refrescante y estimulante de la circulación local.', icon: <Leaf className="w-5 h-5 text-brand-primary" /> },
+    { name: 'Aloe Vera', role: 'Hidratante', desc: 'Calmante, cicatrizante e hidratante profundo de la piel.', icon: <Droplets className="w-5 h-5 text-brand-primary" /> },
+    { name: 'Pantenol', role: 'Regenerador', desc: 'Regenerador celular y humectante. Protección cutánea.', icon: <Shield className="w-5 h-5 text-brand-primary" /> },
   ];
-
-  const jarSrc = '/mama_oso_verified.png';
 
   return (
     <section className="py-12 md:py-24 px-4 bg-brand-dark text-white overflow-hidden relative">
@@ -29,10 +27,10 @@ export const IngredientsSection: React.FC = () => {
             <Sparkles className="w-3 h-3" /> Poder de la Naturaleza
           </motion.div>
           <h2 className="text-3xl md:text-5xl font-heading font-black leading-tight">
-            Fórmula <span className="text-brand-primary">Original</span> NL Nutra
+            Ingredientes <span className="text-brand-primary">Activos</span>
           </h2>
           <p className="text-slate-400 text-base md:text-lg">
-            La combinación perfecta de extractos botánicos y magnesio para un alivio localizado y efectivo.
+            La sinergia natural de MAMAOSO: cada ingrediente trabaja en conjunto para ofrecerte un alivio completo y equilibrado.
           </p>
         </div>
 
@@ -61,7 +59,7 @@ export const IngredientsSection: React.FC = () => {
 
         {/* Impact Visuals Row */}
         <div className="grid lg:grid-cols-2 gap-8 items-stretch">
-          {/* Texture Card */}
+          {/* Botanical Ingredients Photo */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -69,13 +67,13 @@ export const IngredientsSection: React.FC = () => {
             className="group relative rounded-[2.5rem] overflow-hidden border border-white/10 aspect-video md:aspect-auto"
           >
             <img 
-              src="/texture_cream.png" 
-              alt="Textura Crema Mama Oso" 
+              src="/ingredients_botanical_1775966600111.png" 
+              alt="Ingredientes Botánicos de MAMAOSO" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
             />
             <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent flex flex-col justify-end p-8 md:p-12">
-              <h3 className="text-2xl font-black mb-2">Textura Ultra Ligera</h3>
-              <p className="text-slate-300 text-sm max-w-md">Se absorbe en segundos penetrando profundamente en los tejidos nerviosos sin dejar rastro graso.</p>
+              <h3 className="text-2xl font-black mb-2">Ingredientes Naturales Puros</h3>
+              <p className="text-slate-300 text-sm max-w-md">Árnica, Uña de Gato, Eucalipto, Aloe Vera y Pantenol trabajando en sinergia.</p>
             </div>
           </motion.div>
 
@@ -87,14 +85,13 @@ export const IngredientsSection: React.FC = () => {
             className="bg-gradient-to-br from-white/10 to-transparent backdrop-blur-md rounded-[2.5rem] p-8 md:p-12 border border-white/10 flex flex-col items-center justify-center text-center group"
           >
             <div className="relative w-full h-48 md:h-64 mb-8 flex items-center justify-center">
-              {/* CSS Stacked 3 Jars for Ingredients section to show "Bundle" feeling */}
-              <img src={jarSrc} alt="Mama Oso Layer 1" className="absolute w-[45%] left-[10%] bottom-0 object-contain drop-shadow-2xl z-0 opacity-40 -rotate-12" />
-              <img src={jarSrc} alt="Mama Oso Layer 2" className="absolute w-[45%] right-[10%] bottom-0 object-contain drop-shadow-2xl z-0 opacity-40 rotate-12" />
-              <img src={jarSrc} alt="Mama Oso Layer 3" className="absolute w-[65%] left-1/2 -translate-x-1/2 bottom-4 object-contain drop-shadow-[0_30px_50px_rgba(0,0,0,0.5)] z-10" />
+              <div className="rounded-3xl overflow-hidden border border-white/20 shadow-[0_30px_50px_rgba(0,0,0,0.5)] w-[80%] h-[110%]">
+                <img src="/triple_jar_bundle_1775966570362.png" alt="Pack MAMAOSO" className="w-full h-full object-cover" />
+              </div>
             </div>
             
-            <h3 className="text-2xl font-black mb-2">Reserva de Calidad</h3>
-            <p className="text-slate-400 text-sm mb-8">Cada frasco de 100g está sellado al vacío para preservar la potencia de sus extractos activos.</p>
+            <h3 className="text-2xl font-black mb-2">Calidad Garantizada</h3>
+            <p className="text-slate-400 text-sm mb-8">Cada frasco de 100g está elaborado con los más altos estándares de calidad por NL Nutra.</p>
             
             <div className="flex gap-4">
                <div className="flex flex-col items-center">
@@ -103,8 +100,8 @@ export const IngredientsSection: React.FC = () => {
                </div>
                <div className="w-px h-10 bg-white/10" />
                <div className="flex flex-col items-center">
-                  <div className="text-brand-primary font-black text-xl">90</div>
-                  <div className="text-[9px] uppercase tracking-widest text-white/40">Días Garantía</div>
+                  <div className="text-brand-primary font-black text-xl">🔥</div>
+                  <div className="text-[9px] uppercase tracking-widest text-white/40">Alta Demanda</div>
                </div>
             </div>
           </motion.div>

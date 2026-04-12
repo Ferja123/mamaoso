@@ -18,8 +18,7 @@ export const ExpertEndorsement: React.FC = () => {
               className="relative w-full max-w-[320px] lg:max-w-[400px] shrink-0"
             >
               <div className="aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white">
-                {/* Using an existing portrait image from public folder */}
-                <img src="/review_8.png" alt="Dr. Luis Vargas" className="w-full h-full object-cover" />
+                <img src="/doctor_luis_1775965962109.png" alt="Dr. Luis Vargas" className="w-full h-full object-cover" />
               </div>
               
               {/* Floating Badge */}
@@ -28,7 +27,7 @@ export const ExpertEndorsement: React.FC = () => {
                   <ShieldCheck className="w-6 h-6" />
                 </div>
                 <div>
-                  <p className="text-[10px] font-black uppercase text-brand-primary tracking-widest">Especialista en Neurología</p>
+                  <p className="text-[10px] font-black uppercase text-brand-primary tracking-widest">Especialista en Rehabilitación</p>
                   <p className="text-sm font-bold text-brand-dark">Colegiado y Certificado</p>
                 </div>
               </div>
@@ -42,21 +41,21 @@ export const ExpertEndorsement: React.FC = () => {
               </div>
               
               <h2 className="text-3xl md:text-5xl font-heading font-black text-brand-dark leading-tight">
-                "La crema Mama Oso es ahora parte de <span className="text-brand-primary">mi arsenal terapéutico</span>."
+                "MAMAOSO es una fórmula que <span className="text-brand-primary">realmente funciona</span>."
               </h2>
               
               <div className="space-y-4 text-slate-600 text-lg md:text-xl italic leading-relaxed font-body">
                 <p>
-                  "Había probado varios medicamentos orales sin obtener el alivio que mis pacientes necesitaban. Les recomendé la crema Mama Oso como una alternativa innovadora y enfocada directamente en los receptores nerviosos."
+                  "He recomendado productos tópicos a mis pacientes durante años. MAMAOSO destaca por su combinación sinérgica de Árnica y Uña de Gato, que ofrece un efecto analgésico y antiinflamatorio potente actuando directamente en la zona afectada."
                 </p>
                 <p>
-                  "Tras usar la crema durante dos semanas, los reportes fueron una disminución significativa del dolor y del ardor. Es una solución eficaz para quienes buscan recuperar su calidad de vida."
+                  "Mis pacientes con artritis, dolores musculares crónicos y fibromialgia reportan una disminución significativa del dolor y mejor movilidad. Es un complemento terapéutico excelente."
                 </p>
               </div>
               
               <div className="pt-4 border-t border-slate-200">
                 <p className="font-heading font-black text-xl text-brand-dark uppercase tracking-wide">Dr. Luis Vargas</p>
-                <p className="text-brand-primary font-bold text-sm tracking-widest uppercase">Especialista en Rehabilitación y Neurología</p>
+                <p className="text-brand-primary font-bold text-sm tracking-widest uppercase">Especialista en Rehabilitación Física</p>
               </div>
             </div>
           </div>

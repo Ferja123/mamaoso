@@ -4,10 +4,10 @@ import { Zap, ShieldCheck, Heart, Sparkles, Droplets, Thermometer } from 'lucide
 
 export const BenefitsGrid: React.FC = () => {
   const benefits = [
-    { title: 'Alivia el Hormigueo', desc: 'Reduce la sensación de "electricidad" y pinchazos en pies y manos.', icon: <Zap className="w-8 h-8 text-white" /> },
-    { title: 'Calma el Ardor', desc: 'Ayuda a refrescar y aliviar la sensación de calor intenso o quemazón.', icon: <Thermometer className="w-8 h-8 text-white" /> },
-    { title: 'Recupera Sensibilidad', desc: 'Contribuye a mejorar la sensación de entumecimiento y falta de tacto.', icon: <ShieldCheck className="w-8 h-8 text-white" /> },
-    { title: 'Mejora Circulación', desc: 'Apoya el flujo sanguíneo para evitar la hinchazón y pesadez.', icon: <Heart className="w-8 h-8 text-white" /> }
+    { title: 'Alivio del Dolor', desc: 'Acción rápida y eficaz contra dolores musculares, articulares y neuropáticos.', icon: <Zap className="w-8 h-8 text-white" /> },
+    { title: 'Antiinflamatorio', desc: 'Reduce la inflamación y acelera la recuperación después del esfuerzo físico.', icon: <Thermometer className="w-8 h-8 text-white" /> },
+    { title: 'Hidratación Profunda', desc: 'Aloe Vera y Pantenol nutren, regeneran y protegen la piel intensamente.', icon: <Droplets className="w-8 h-8 text-white" /> },
+    { title: 'Mejora Circulación', desc: 'El Eucalipto estimula el flujo sanguíneo local con sensación refrescante.', icon: <Heart className="w-8 h-8 text-white" /> }
   ];
 
   return (
@@ -23,12 +23,12 @@ export const BenefitsGrid: React.FC = () => {
              viewport={{ once: true }}
              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-primary/30 text-brand-primary font-bold text-[10px] uppercase tracking-widest bg-white shadow-sm"
            >
-             <Sparkles className="w-3 h-3" /> Beneficios Principales
+             <Sparkles className="w-3 h-3" /> Beneficios Comprobados
            </motion.div>
            <h2 className="text-4xl md:text-5xl font-heading font-black text-brand-dark leading-tight">
-             ¿Cómo te ayuda <span className="text-brand-primary">Mama Oso</span>?
+             ¿Qué hace <span className="text-brand-primary">MAMAOSO</span> por ti?
            </h2>
-           <p className="text-slate-500 text-lg">Nuestra fórmula está diseñada específicamente para atacar los síntomas más molestos de la sensibilidad nerviosa.</p>
+           <p className="text-slate-500 text-lg">Fórmula natural diseñada para brindar alivio completo y equilibrado del dolor muscular y articular.</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

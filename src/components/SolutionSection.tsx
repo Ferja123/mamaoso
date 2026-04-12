@@ -7,9 +7,6 @@ interface SolutionProps {
 }
 
 export const SolutionSection: React.FC<SolutionProps> = ({ onOrderClick }) => {
-  const verifiedJar = '/mama_oso_verified.png';
-  const lifestyleImg = '/lifestyle_impact_1.jpg';
-
   return (
     <section className="py-16 md:py-24 px-4 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto space-y-20 md:space-y-32">
@@ -31,15 +28,15 @@ export const SolutionSection: React.FC<SolutionProps> = ({ onOrderClick }) => {
             </h2>
             
             <p className="text-lg text-slate-500 leading-relaxed font-body">
-              No dejes que el hormigueo y el dolor detengan tu día. La Crema Mama Oso ha sido formulada para actuar rápidamente, devolviéndote la libertad que necesitas para tus actividades diarias.
+              No dejes que el dolor muscular, la artritis o el cansancio detengan tu día. MAMAOSO ha sido formulada para actuar rápidamente, devolviéndote la libertad y el bienestar que necesitas.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-4">
                {[
-                 { title: "Alivio Profundo", desc: "Actúa en la raíz del malestar." },
-                 { title: "Recuperación Veloz", desc: "Ideal para después del ejercicio." },
-                 { title: "Bienestar Diario", desc: "Para adultos de todas las edades." },
-                 { title: "Poder Natural", desc: "Magnesio y extractos puros." }
+                 { title: "Alivio Profundo", desc: "Analgésico y antiinflamatorio directo." },
+                 { title: "Recuperación Veloz", desc: "Ideal después del ejercicio físico." },
+                 { title: "Para Toda la Familia", desc: "Adultos mayores, deportistas y más." },
+                 { title: "100% Natural", desc: "Árnica, Uña de Gato, Aloe Vera." }
                ].map((benefit, i) => (
                  <div key={i} className="flex gap-3">
                     <CheckCircle2 className="w-5 h-5 text-brand-primary shrink-0 mt-0.5" />
@@ -70,10 +67,9 @@ export const SolutionSection: React.FC<SolutionProps> = ({ onOrderClick }) => {
           >
             <div className="absolute -inset-10 bg-brand-primary/10 rounded-full blur-[120px] -z-10" />
             <div className="rounded-[3rem] overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.2)] border-8 border-white bg-slate-50 relative aspect-[4/5] md:aspect-auto">
-              {/* High Impact Lifestyle Image from Oechsle Source */}
               <img 
-                src={lifestyleImg} 
-                alt="Estilo de vida activo con Mama Oso" 
+                src="/senior_relief_1775966614001.png" 
+                alt="Persona activa y feliz gracias a MAMAOSO" 
                 className="w-full h-full object-cover" 
                 loading="lazy"
               />
@@ -106,9 +102,9 @@ export const SolutionSection: React.FC<SolutionProps> = ({ onOrderClick }) => {
                  <h3 className="text-2xl font-black text-white">¿Cómo aplicarlo?</h3>
                  <div className="space-y-6">
                     {[
-                      { step: "01", title: "Limpiar", desc: "Asegura que la zona esté limpia y seca.", icon: <Droplet className="w-5 h-5"/> },
-                      { step: "02", title: "Aplicar", desc: "Pon una pequeña cantidad sobre el área.", icon: <Activity className="w-5 h-5"/> },
-                      { step: "03", title: "Masajear", desc: "Fricciona suavemente hasta absorber.", icon: <Thermometer className="w-5 h-5"/> }
+                      { step: "01", title: "Aplicar", desc: "Coloca una cantidad suficiente en la zona deseada del cuerpo.", icon: <Droplet className="w-5 h-5"/> },
+                      { step: "02", title: "Masajear", desc: "Realiza masajes circulares y ascendentes hasta su total absorción.", icon: <Activity className="w-5 h-5"/> },
+                      { step: "03", title: "Repetir", desc: "Aplica 2 a 3 veces al día. Uso continuo = mejores resultados.", icon: <Thermometer className="w-5 h-5"/> }
                     ].map((item, idx) => (
                       <div key={idx} className="flex gap-5 group/item">
                         <div className="text-brand-primary font-black text-2xl opacity-40 group-hover/item:opacity-100 transition-opacity">{item.step}</div>
@@ -120,8 +116,10 @@ export const SolutionSection: React.FC<SolutionProps> = ({ onOrderClick }) => {
                     ))}
                  </div>
                  
-                 <div className="pt-8 flex justify-center scale-110 md:scale-125">
-                   <img src={verifiedJar} alt="Frasco Mama Oso Verificado" className="w-40 h-40 object-contain drop-shadow-[0_20px_40px_rgba(16,185,129,0.3)] transition-transform group-hover:scale-105 duration-500" />
+                 <div className="pt-8 flex justify-center">
+                   <div className="rounded-3xl overflow-hidden shadow-[0_20px_40px_rgba(16,185,129,0.3)] border-4 border-white/10 w-44 h-44">
+                     <img src="/jar_application_hands_1775966545620.png" alt="Aplicación de MAMAOSO" className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500" />
+                   </div>
                  </div>
               </div>
             </div>
@@ -134,15 +132,16 @@ export const SolutionSection: React.FC<SolutionProps> = ({ onOrderClick }) => {
             className="order-1 md:order-2 space-y-8"
           >
             <h2 className="text-3xl md:text-4xl font-heading font-black text-brand-dark leading-tight">
-              Especificaciones de <span className="text-brand-primary">Calidad</span>
+              Detalle del <span className="text-brand-primary">Producto</span>
             </h2>
             
             <div className="grid gap-4">
                {[
                  { label: "Contenido Neto", value: "100 Gramos", icon: "💎" },
                  { label: "Fabricante", value: "NL Nutra", icon: "🏢" },
-                 { label: "Registro Sanitario", value: "Vigente y Verificado", icon: "📑" },
-                 { label: "Categoría", value: "Bienestar Muscular", icon: "🌿" }
+                 { label: "Tipo", value: "Crema Dermocosmética", icon: "🧴" },
+                 { label: "Uso", value: "Tópico (Externo)", icon: "🌿" },
+                 { label: "Registro Sanitario", value: "✔️ Disponible", icon: "📑" },
                ].map((spec, i) => (
                  <div key={i} className="flex justify-between items-center p-5 bg-slate-50 border border-slate-100 rounded-2xl hover:bg-white hover:shadow-lg transition-all">
                     <div className="flex items-center gap-3">
@@ -156,8 +155,8 @@ export const SolutionSection: React.FC<SolutionProps> = ({ onOrderClick }) => {
 
             <div className="p-8 bg-brand-primary/5 rounded-[2.5rem] border-2 border-dashed border-brand-primary/20 flex flex-col items-center text-center gap-3">
               <UserCheck className="w-10 h-10 text-brand-primary mb-2" />
-              <p className="text-brand-dark font-black text-lg">Recomendado por Especialistas</p>
-              <p className="text-slate-500 text-sm">El uso constante de Mama Oso ha reportado una mejora del 94% en la sensación de confort en adultos mayores.</p>
+              <p className="text-brand-dark font-black text-lg">Ideal para Todo Público</p>
+              <p className="text-slate-500 text-sm">Adultos mayores, deportistas, personas con dolores crónicos y cualquier persona que busque alivio y bienestar corporal.</p>
             </div>
           </motion.div>
         </div>

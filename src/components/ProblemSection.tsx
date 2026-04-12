@@ -8,10 +8,10 @@ interface ProblemSectionProps {
 
 export const ProblemSection: React.FC<ProblemSectionProps> = ({ onOrderClick }) => {
   const symptoms = [
-    { icon: <Flame className="w-6 h-6" />, title: 'Ardor y Quemazón', desc: 'Sensaciones de calor intenso en pies y manos' },
-    { icon: <ZapIcon className="w-6 h-6" />, title: 'Hormigueo', desc: 'Electricidad constante que no te deja en paz' },
-    { icon: <Wind className="w-6 h-6" />, title: 'Entumecimiento', desc: 'Pérdida de sensibilidad y equilibrio' },
-    { icon: <AlertCircle className="w-6 h-6" />, title: 'Mala Circulación', desc: 'Pies fríos, hinchados e incómodos' },
+    { icon: <Flame className="w-6 h-6" />, title: 'Dolor Muscular', desc: 'Tensión acumulada, calambres y malestar después del esfuerzo' },
+    { icon: <ZapIcon className="w-6 h-6" />, title: 'Dolor Articular', desc: 'Artritis, artrosis y rigidez que limitan tu movimiento' },
+    { icon: <Wind className="w-6 h-6" />, title: 'Dolor Neuropático', desc: 'Hormigueo, ardor y sensación de entumecimiento' },
+    { icon: <AlertCircle className="w-6 h-6" />, title: 'Cansancio Corporal', desc: 'Fatiga muscular acumulada y pesadez en el cuerpo' },
   ];
 
   return (
@@ -27,10 +27,10 @@ export const ProblemSection: React.FC<ProblemSectionProps> = ({ onOrderClick }) 
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-heading font-black leading-tight"
           >
-            ¿Cansado de Vivir con <span className="text-red-400">Ardor, Hormigueo</span> y <span className="text-red-400">Entumecimiento</span>?
+            ¿Cansado de Vivir con <span className="text-red-400">Dolor Muscular</span> y <span className="text-red-400">Articular</span>?
           </motion.h2>
           <p className="text-slate-400 text-base md:text-lg max-w-2xl mx-auto">
-            El <strong className="text-white">75% de los adultos en Perú</strong> tienen deficiencia de magnesio, lo cual desequilibra los nervios causando dolor, hormigueo y entumecimiento.
+            El dolor crónico afecta tu <strong className="text-white">calidad de vida</strong>, tu sueño y tu capacidad de disfrutar cada día. No tienes por qué acostumbrarte.
           </p>
         </div>
 
@@ -60,11 +60,11 @@ export const ProblemSection: React.FC<ProblemSectionProps> = ({ onOrderClick }) 
           className="bg-gradient-to-r from-brand-primary/20 to-green-500/20 border border-brand-primary/30 rounded-3xl p-6 md:p-8 text-center"
         >
           <div className="flex flex-col md:flex-row items-center gap-6">
-            <img src="/mama_oso_verified.png" alt="Mama Oso" className="w-24 md:w-32 object-contain drop-shadow-xl" />
+            <img src="/real_jar.png" alt="Crema MAMAOSO" className="w-28 md:w-36 object-contain drop-shadow-xl" />
             <div className="text-left space-y-2 flex-1">
-              <h3 className="text-xl md:text-2xl font-black">La Crema Mama Oso ataca la raíz del problema</h3>
+              <h3 className="text-xl md:text-2xl font-black">MAMAOSO ataca la raíz del dolor</h3>
               <p className="text-slate-300 text-sm leading-relaxed">
-                Al aplicarla directamente sobre la piel, el magnesio y los extractos botánicos llegan directo a los nervios afectados, proporcionando alivio rápido y duradero <strong className="text-brand-primary">sin pasar por el sistema digestivo.</strong>
+                Al aplicarla directamente sobre la piel, los extractos de Árnica, Uña de Gato y Eucalipto actúan como <strong className="text-brand-primary">analgésico, antiinflamatorio y estimulante circulatorio</strong>, llegando directo a la zona afectada para un alivio rápido y eficaz.
               </p>
             </div>
             <button

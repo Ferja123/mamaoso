@@ -9,7 +9,7 @@ export const ReviewsSection: React.FC = () => {
     {
       name: "Carmen M.",
       location: "Lima, Perú",
-      text: "Cuando empecé el tratamiento, estaba cojeando con un fuerte dolor en el pie derecho, la cadera y la espalda, lo que hacía difícil sentarme o caminar. Ahora, me siento mucho mejor y estoy agradecida por la mejora.",
+      text: "Sufría de dolores terribles en la espalda y las rodillas. Desde que uso MAMAOSO, puedo caminar y hacer mis cosas sin problema. La aplico 3 veces al día y el alivio es increíble.",
       img: "/review_1.png",
       rating: 5,
       time: "Hace 2 semanas"
@@ -17,7 +17,7 @@ export const ReviewsSection: React.FC = () => {
     {
       name: "Rosario Gomez",
       location: "Cusco, Perú",
-      text: "Caminar se sentía como pisando bultos de arcilla con entumecido y hormigueo. Ahora siento texturas, mi equilibrio es mejor, y estoy sin dolor. Caminar y dormir son mucho más fáciles.",
+      text: "Tengo artritis y el dolor en mis manos era insoportable. MAMAOSO me ha devuelto la movilidad. La textura es suave, se absorbe rápido y no deja grasa. ¡La recomiendo al 100%!",
       img: "/review_2.png",
       rating: 5,
       time: "Hace 3 semanas"
@@ -25,7 +25,7 @@ export const ReviewsSection: React.FC = () => {
     {
       name: "Martha Medina",
       location: "Junín, Perú",
-      text: "No había dormido en días debido al dolor constante. Mis pies estaban ardiendo, fríos y entumecidos. Después de la primera aplicación, sentí alivio inmediato y ahora puedo caminar durante horas y dormir toda la noche.",
+      text: "Después de mis caminatas, mis piernas quedaban adoloridas e hinchadas. Con MAMAOSO la recuperación es mucho más rápida. Me la aplico y al día siguiente estoy como nueva.",
       img: "/review_3.png",
       rating: 5,
       time: "Hace 1 mes"
@@ -33,7 +33,7 @@ export const ReviewsSection: React.FC = () => {
     {
       name: "Barbara Y.",
       location: "Arequipa, Perú",
-      text: "He intentado de todo, desde pastillas hasta ejercicios. Solo la Crema Mama Oso es la única cosa que me ha funcionado para aliviar mi neuropatía. La recomiendo al 100%.",
+      text: "He probado muchas cremas para el dolor muscular y ninguna me funcionó como MAMAOSO. El eucalipto te da una sensación fresca inmediata y el dolor va bajando poco a poco.",
       img: "/review_8.png",
       rating: 5,
       time: "Hace 1 semana"
@@ -41,7 +41,7 @@ export const ReviewsSection: React.FC = () => {
     {
       name: "Jorge Quispe",
       location: "Trujillo, Perú",
-      text: "Trabajo en construcción y los dolores musculares eran terribles al final del día. Mi esposa me compró esta crema y desde la primera semana noté un alivio increíble.",
+      text: "Trabajo en construcción y los dolores musculares eran terribles al final del día. Mi esposa me compró MAMAOSO y desde la primera semana noté un alivio increíble.",
       img: "/review_4.png",
       rating: 5,
       time: "Hace 5 días"
@@ -49,7 +49,7 @@ export const ReviewsSection: React.FC = () => {
     {
       name: "Lucía Fernández",
       location: "Lima, Perú",
-      text: "Soy maratonista y después de cada entrenamiento mis piernas quedaban destrozadas. Con Mama Oso la recuperación es mucho más rápida.",
+      text: "Soy deportista y después de cada entrenamiento mis piernas quedaban destrozadas. Con MAMAOSO la recuperación muscular es mucho más rápida, y además me hidrata la piel.",
       img: "/review_5.png",
       rating: 5,
       time: "Hace 4 días"

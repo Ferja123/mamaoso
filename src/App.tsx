@@ -6,14 +6,15 @@ import { Truck, MessageCircle } from 'lucide-react';
 import { UrgencyBanner } from './components/UrgencyBanner';
 import { HeroSection } from './components/HeroSection';
 import { ProblemSection } from './components/ProblemSection';
-import { VideoSection } from './components/VideoSection';
 import { BenefitsGrid } from './components/BenefitsGrid';
+import { EmbeddedVideo } from './components/EmbeddedVideo';
 import { ExpertEndorsement } from './components/ExpertEndorsement';
 import { SolutionSection } from './components/SolutionSection';
 import { IngredientsSection } from './components/IngredientsSection';
 import { ReviewsSection } from './components/ReviewsSection';
 import { GuaranteeSection } from './components/GuaranteeSection';
 import { OrderForm } from './components/OrderForm';
+import { LivePurchaseNotification } from './components/LivePurchaseNotification';
 
 export default function App() {
   const [stock, setStock] = useState(14);
@@ -61,17 +62,17 @@ export default function App() {
       <UrgencyBanner timeLeft={timeLeft} formatTime={formatTime} />
 
       <main>
-        {/* 2. Hero: Product + CTA + Trust Badges */}
+        {/* 2. Hero: Real Product + CTA + Trust Badges */}
         <HeroSection onOrderClick={scrollToOrder} />
 
         {/* 3. Problem Agitation: Pain points + Solution intro */}
         <ProblemSection onOrderClick={scrollToOrder} />
 
-        {/* 4. Product Showcase Video / Interactive Reel */}
-        <VideoSection onOrderClick={scrollToOrder} />
-
-        {/* 5. Benefits: What does it do? (Specific to Neuropathy) */}
+        {/* 4. Benefits: What does MAMAOSO do? */}
         <BenefitsGrid />
+
+        {/* 5. High Impact Video Showcase */}
+        <EmbeddedVideo onOrderClick={scrollToOrder} />
 
         {/* 6. Expert Endorsement: Trust anchor with Medical Professional */}
         <ExpertEndorsement />
@@ -79,7 +80,7 @@ export default function App() {
         {/* 7. How To Use + Product Detail + Who It's For */}
         <SolutionSection onOrderClick={scrollToOrder} />
 
-        {/* 8. Ingredients + Product Images */}
+        {/* 8. Ingredients + Botanical Imagery */}
         <IngredientsSection />
 
         {/* 9. Social Proof: Reviews with photos */}
@@ -95,8 +96,8 @@ export default function App() {
       {/* Footer */}
       <footer className="bg-slate-900 py-12 px-4 text-center border-t border-brand-primary/10">
         <div className="max-w-5xl mx-auto space-y-4">
-          <div className="text-brand-primary font-heading font-black text-2xl uppercase tracking-tight">MAMA OSO ORIGINAL</div>
-          <p className="text-slate-500 text-[10px] uppercase tracking-widest font-bold">© 2026 Mama Oso Perú · Con Registro Sanitario · Todos los derechos reservados</p>
+          <div className="text-brand-primary font-heading font-black text-2xl uppercase tracking-tight">MAMAOSO · NL NUTRA</div>
+          <p className="text-slate-500 text-[10px] uppercase tracking-widest font-bold">© 2026 MAMAOSO Perú · Con Registro Sanitario · Todos los derechos reservados</p>
           <div className="flex flex-wrap justify-center gap-4 text-slate-400 text-[10px] uppercase font-bold tracking-widest">
             <span>Envío Gratis</span>
             <span className="text-white/20">|</span>
@@ -105,7 +106,7 @@ export default function App() {
             <span>Garantía de Satisfacción</span>
           </div>
           <p className="text-[9px] text-slate-600 max-w-md mx-auto italic leading-relaxed pt-4">
-            Este producto cuenta con Registro Sanitario. Los resultados pueden variar dependiendo de la condición física de cada persona. No reemplaza el consejo médico profesional ni pretende diagnosticar enfermedades.
+            Este producto cuenta con Registro Sanitario. Los resultados pueden variar dependiendo de la condición física de cada persona. No reemplaza el consejo médico profesional ni pretende diagnosticar enfermedades. Crema dermocosmética de uso tópico externo.
           </p>
         </div>
       </footer>
@@ -116,7 +117,7 @@ export default function App() {
           <div className="fixed bottom-4 left-4 right-4 md:left-auto md:right-6 md:bottom-6 z-[150] flex items-end gap-3">
             {/* WhatsApp */}
             <motion.a
-              href="https://wa.me/51919749480?text=Hola,%20quiero%20información%20sobre%20la%20Crema%20Mama%20Oso"
+              href="https://wa.me/51919749480?text=Hola,%20quiero%20información%20sobre%20la%20Crema%20MAMAOSO"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ scale: 0 }}
@@ -142,6 +143,9 @@ export default function App() {
           </div>
         )}
       </AnimatePresence>
+
+      {/* Live Sales Notification */}
+      <LivePurchaseNotification />
     </div>
   );
 }

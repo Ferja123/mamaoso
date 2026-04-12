@@ -24,20 +24,20 @@ export const HeroSection: React.FC<HeroProps> = ({ onOrderClick }) => {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 border border-brand-primary/20 text-brand-primary font-black text-[10px] uppercase tracking-[0.2em]">
               <div className="w-1.5 h-1.5 bg-brand-primary rounded-full animate-pulse" />
-              Producto Original Certificado
+              NL NUTRA · Producto Original Certificado
             </div>
 
             <h1 className="text-4xl md:text-6xl font-heading font-black text-brand-dark leading-[1.05] tracking-tight">
-              Alivio Real para la <span className="text-brand-primary relative">
-                Neuropatía
+              Alivio Natural para el <span className="text-brand-primary relative">
+                Dolor Muscular
                 <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 100 10" preserveAspectRatio="none">
                   <path d="M0 5 Q 25 0 50 5 Q 75 10 100 5" stroke="#10b981" strokeWidth="4" fill="none" strokeLinecap="round" />
                 </svg>
-              </span>
+              </span> y Articular
             </h1>
 
             <p className="text-slate-600 text-lg md:text-xl leading-relaxed max-w-lg mx-auto lg:mx-0 font-medium">
-              Elimina el ardor, hormigueo y entumecimiento con la fórmula original de <strong className="text-brand-dark">Mama Oso</strong>. Resultados garantizados desde la primera aplicación.
+              Fórmula dermocosmética con <strong className="text-brand-dark">Árnica, Uña de Gato, Eucalipto y Aloe Vera</strong>. Alivio rápido, hidratación profunda y recuperación muscular desde la primera aplicación.
             </p>
 
             {/* Stars Row */}
@@ -45,7 +45,7 @@ export const HeroSection: React.FC<HeroProps> = ({ onOrderClick }) => {
               <div className="flex items-center gap-0.5">
                 {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />)}
               </div>
-              <span className="text-xs font-black text-brand-dark">+1,600 Clientes Felices en Perú</span>
+              <span className="text-xs font-black text-brand-dark">+1,600 Clientes Satisfechos en Perú</span>
             </div>
 
             {/* CTA Group */}
@@ -65,20 +65,22 @@ export const HeroSection: React.FC<HeroProps> = ({ onOrderClick }) => {
             </div>
           </motion.div>
 
-          {/* RIGHT: Product Image */}
+          {/* RIGHT: Product Image - REAL JAR */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="relative flex justify-center order-1 lg:order-2"
           >
-            <div className="relative max-w-[380px] md:max-w-[500px] w-full p-4">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-brand-primary/20 rounded-full blur-[100px] -z-10 animate-pulse" />
-              <img
-                src="/mama_oso_verified.png"
-                alt="Mama Oso Crema Original"
-                className="w-full object-contain drop-shadow-[0_45px_65px_rgba(0,0,0,0.15)] filter brightness-105"
-              />
+            <div className="relative max-w-[380px] md:max-w-[460px] w-full p-2">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-brand-primary/15 rounded-full blur-[100px] -z-10 animate-pulse" />
+              <div className="rounded-[2.5rem] overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.2)] ring-4 ring-white/60">
+                <img
+                  src="/hero_studio_jar_1775966524951.png"
+                  alt="Crema MAMAOSO NL Nutra - Frasco 100g"
+                  className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
+                />
+              </div>
               
               {/* Floating Badge */}
               <motion.div 
@@ -98,7 +100,7 @@ export const HeroSection: React.FC<HeroProps> = ({ onOrderClick }) => {
           {[
             { icon: <Truck className="w-6 h-6" />, title: 'Envío Gratis', sub: 'A todo el Perú hoy' },
             { icon: <RotateCcw className="w-6 h-6" />, title: 'Paga al Recibir', sub: 'Efectivo, Yape o Plin' },
-            { icon: <ShieldCheck className="w-6 h-6" />, title: 'Original NL NUTRA', sub: 'Registro Sanitario' },
+            { icon: <ShieldCheck className="w-6 h-6" />, title: 'Registro Sanitario', sub: 'NL NUTRA Certificado' },
           ].map((item, i) => (
             <motion.div 
               key={i} 
