@@ -7,7 +7,7 @@ import { UrgencyBanner } from './components/UrgencyBanner';
 import { HeroSection } from './components/HeroSection';
 import { ProblemSection } from './components/ProblemSection';
 import { BenefitsGrid } from './components/BenefitsGrid';
-import { EmbeddedVideo } from './components/EmbeddedVideo';
+import { VideoShowcase } from './components/VideoShowcase';
 import { ExpertEndorsement } from './components/ExpertEndorsement';
 import { SolutionSection } from './components/SolutionSection';
 import { IngredientsSection } from './components/IngredientsSection';
@@ -71,8 +71,8 @@ export default function App() {
         {/* 4. Benefits: What does MAMAOSO do? */}
         <BenefitsGrid />
 
-        {/* 5. High Impact Video Showcase */}
-        <EmbeddedVideo onOrderClick={scrollToOrder} />
+        {/* 5. Video Showcase: Cinematic product experience */}
+        <VideoShowcase onOrderClick={scrollToOrder} />
 
         {/* 6. Expert Endorsement: Trust anchor with Medical Professional */}
         <ExpertEndorsement />
