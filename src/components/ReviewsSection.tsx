@@ -10,7 +10,7 @@ export const ReviewsSection: React.FC = () => {
       name: "Carmen Mendoza",
       location: "San Martín de Porres, Lima",
       text: "Sufría de dolores terribles en la espalda y las rodillas. Desde que uso MAMAOSO, puedo caminar y hacer mis cosas sin problema. La aplico 3 veces al día y el alivio es increíble.",
-      img: "https://images.unsplash.com/photo-1554126807-6b10f6f6692a?w=150&h=150&fit=crop",
+      img: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=150&h=150&fit=crop",
       rating: 5,
       time: "Hace 2 semanas"
     },
@@ -18,7 +18,7 @@ export const ReviewsSection: React.FC = () => {
       name: "Rosario Gomez",
       location: "Cusco, Perú",
       text: "Tengo artritis y el dolor en mis manos era insoportable por el frío. MAMAOSO me ha devuelto la movilidad. La textura es suave, se absorbe rápido y no deja manchas. ¡La recomiendo!",
-      img: "https://images.unsplash.com/photo-1569424785891-b1277a160a28?w=150&h=150&fit=crop",
+      img: "https://images.unsplash.com/photo-1544168190-79c15427015d?w=150&h=150&fit=crop",
       rating: 5,
       time: "Hace 3 semanas"
     },
@@ -26,7 +26,7 @@ export const ReviewsSection: React.FC = () => {
       name: "Martha Medina",
       location: "Chanchamayo, Junín",
       text: "Después de mis caminatas por el mercado, mis piernas quedaban adoloridas e hinchadas. Con MAMAOSO la recuperación es mucho más rápida. Me echo y al día siguiente estoy como nueva.",
-      img: "https://images.unsplash.com/photo-1507120878502-04e3230dd692?w=150&h=150&fit=crop",
+      img: "https://images.unsplash.com/photo-1581578731548-c64695cc6958?w=150&h=150&fit=crop",
       rating: 5,
       time: "Hace 1 mes"
     },
@@ -34,7 +34,7 @@ export const ReviewsSection: React.FC = () => {
       name: "Julio Reyes",
       location: "Cerro Colorado, Arequipa",
       text: "He probado muchas cremas de la farmacia para el dolor muscular y ninguna me funcionó como esta crema. El eucalipto te da una frescura inmediata.",
-      img: "https://images.unsplash.com/photo-1628157588553-5eeea00af15c?w=150&h=150&fit=crop",
+      img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop",
       rating: 5,
       time: "Hace 1 semana"
     },
@@ -50,7 +50,7 @@ export const ReviewsSection: React.FC = () => {
       name: "Lucía Fernández",
       location: "Villa El Salvador, Lima",
       text: "Soy muy activa y mis rodillas empezaron a fallar por la edad. Aplicarme MAMAOSO antes y después de salir a caminar ha regresado el confort a mis articulaciones.",
-      img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop",
+      img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop",
       rating: 5,
       time: "Hace 4 días"
     },
@@ -58,7 +58,7 @@ export const ReviewsSection: React.FC = () => {
       name: "Ana Velásquez",
       location: "Piura, Perú",
       text: "Compré el paquete de 3 frascos porque a mis papás les encanta. La uña de gato y la árnica hacen un efecto casi mágico. Excelentes resultados de verdad.",
-      img: "https://images.unsplash.com/photo-1614583225154-5feaba0f707f?w=150&h=150&fit=crop",
+      img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop",
       rating: 5,
       time: "Hace 2 meses"
     },
@@ -66,7 +66,7 @@ export const ReviewsSection: React.FC = () => {
       name: "Víctor Huamán",
       location: "El Tambo, Huancayo",
       text: "El hormigueo en mis pies no me dejaba dormir bien por las noches. Desde que la uso en mis pantorrillas y tobillos duermo tranquilo. Es una crema excelente.",
-      img: "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?w=150&h=150&fit=crop",
+      img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop",
       rating: 5,
       time: "Hace 3 días"
     },
@@ -74,7 +74,7 @@ export const ReviewsSection: React.FC = () => {
       name: "Silvia Paredes",
       location: "Ica, Perú",
       text: "Llegó súper rápido y pagué al momento de recibirlo. La crema calienta al frotar y luego refresca. Mi cuello y hombros se sienten mucho más ligeros durante mi turno de trabajo.",
-      img: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=150&h=150&fit=crop",
+      img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop",
       rating: 5,
       time: "Hace 1 mes"
     },

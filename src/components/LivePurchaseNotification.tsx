@@ -9,20 +9,20 @@ const times = ['hace 1 minuto', 'hace 2 minutos', 'hace 3 minutos', 'hace 5 minu
 
 const avatars = [
   'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop',
-  'https://images.unsplash.com/photo-1544168190-79c15427015d?w=100&h=100&fit=crop',
-  'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop',
   'https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=100&h=100&fit=crop',
-  'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop',
-  'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop',
-  'https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=100&h=100&fit=crop',
-  'https://images.unsplash.com/photo-1531123897727-8f129e1b4dce?w=100&h=100&fit=crop',
-  'https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&h=100&fit=crop',
   'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=100&h=100&fit=crop',
   'https://images.unsplash.com/photo-1552058544-f2b08422138a?w=100&h=100&fit=crop',
-  'https://images.unsplash.com/photo-1628157588553-5eeea00af15c?w=100&h=100&fit=crop',
   'https://images.unsplash.com/photo-1554151228-14d9def656e4?w=100&h=100&fit=crop',
-  'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop',
-  'https://images.unsplash.com/photo-1544711317-0638eb76451a?w=100&h=100&fit=crop'
+  'https://images.unsplash.com/photo-1544711317-0638eb76451a?w=100&h=100&fit=crop',
+  'https://images.unsplash.com/photo-1531123414780-f74242c2b052?w=100&h=100&fit=crop',
+  'https://images.unsplash.com/photo-1512485694743-9c9538b4e6e0?w=100&h=100&fit=crop',
+  'https://images.unsplash.com/photo-1590458852391-7f897f1f9746?w=100&h=100&fit=crop',
+  'https://images.unsplash.com/photo-1617066471161-0f339656fb15?w=100&h=100&fit=crop',
+  'https://images.unsplash.com/photo-1611082980185-3006de81878d?w=100&h=100&fit=crop',
+  'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop',
+  'https://images.unsplash.com/photo-1551069613-1904dbdcda11?w=100&h=100&fit=crop',
+  'https://images.unsplash.com/photo-1491349174775-aaafddd81942?w=100&h=100&fit=crop',
+  'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=100&h=100&fit=crop'
 ];
 
 export const LivePurchaseNotification: React.FC = () => {
