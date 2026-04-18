@@ -65,6 +65,8 @@ export const OrderForm: React.FC<OrderFormProps> = ({ stock }) => {
     // TikTok Pixel Tracking
     if ((window as any).ttq) {
       (window as any).ttq.track('PlaceAnOrder', {
+        content_type: 'product',
+        content_id: 'mamaoso-crema',
         content_name: paquete,
         currency: 'PEN',
         value: paquete.includes('109') ? 109 : paquete.includes('189') ? 189 : 249
