@@ -135,10 +135,10 @@ export default function App() {
               exit={{ y: 30, opacity: 0 }}
               whileTap={{ scale: 0.95 }}
               onClick={scrollToOrder}
-              className="bg-brand-primary text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center justify-center gap-2 border-2 border-white/20 uppercase font-black text-xs tracking-wider shadow-brand-primary/40 flex-1 md:flex-none"
+              className="bg-gradient-to-r from-orange-500 to-red-600 text-white px-5 py-3.5 rounded-2xl shadow-[0_10px_30px_rgba(239,68,68,0.5)] flex items-center justify-center gap-2 border-2 border-white/30 uppercase font-black text-sm tracking-wider flex-1 md:flex-none animate-[pulse_2.5s_ease-in-out_infinite] hover:from-orange-600 hover:to-red-700"
             >
-              <Truck className="w-4 h-4" />
-              ORDENAR AHORA
+              <Truck className="w-5 h-5" />
+              COMPRAR AHORA
             </motion.button>
           </div>
         )}
